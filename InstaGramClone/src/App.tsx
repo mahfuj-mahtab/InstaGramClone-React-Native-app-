@@ -106,8 +106,14 @@ function App(): JSX.Element {
 
       </View>
       </View>
-      <View style = {styles.footerSection}>
+      <View style ={styles.mainBody} >
+      <ScrollView >
 
+
+      </ScrollView>
+      </View>
+      <View style = {styles.footerSection}>
+      <FontAwesomeIcon size={18}  icon={faHeart} />
       </View>
     </View>
    </SafeAreaView>
@@ -120,7 +126,7 @@ const styles = StyleSheet.create({
     height:"100%",
     backgroundColor:"#0D0D0D",
     // flex:1,
-    flexDirection:"row",
+    flexDirection:"column",
   },
   headerSection:{
     width:"100%",
@@ -129,7 +135,13 @@ const styles = StyleSheet.create({
     marginBottom:20,
     
   },
-  footerSection:{},
+  footerSection:{
+    width:"100%",
+    height:100,
+    borderWidth:1,
+    borderColor:"#fff",
+    // marginTop:"139%",
+  },
   topHeader:{
     flex:1,
     width:"100%",
@@ -235,6 +247,14 @@ name:{
 profile_portion:{
   width:80,
 
+},
+mainBody:{
+  width:"100%",
+  backgroundColor:"#fff",
+  height:570,
+  borderWidth:1,
+  borderColor:"#537637",
+  // flex:1, 
 }
 });
 
