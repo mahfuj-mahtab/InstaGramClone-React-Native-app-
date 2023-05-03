@@ -12,7 +12,8 @@ import {
   Text,
   useColorScheme,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
 import {
@@ -48,7 +49,62 @@ function App(): JSX.Element {
         </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.bottomHeader}></View>
+      <View style={styles.bottomHeader}>
+      <View style={styles.profile_pic_section}>
+        <TouchableOpacity>
+      <Image  style={styles.profile_pic} source={require('./Asset/2.jpg')} />
+      <View style={styles.plus_view}>
+      <Text style={styles.plus}>+</Text>
+      </View>
+      <Text style={styles.name}>Your Story</Text>
+      </TouchableOpacity>
+      </View>
+      <View style={styles.story_section}>
+        <ScrollView horizontal>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/1.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/2.jpg')} />
+  
+      <Text style={styles.name}>Mahfuj Mahtab</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/3.jpg')} />
+  
+      <Text style={styles.name}>Mahir Shahriar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/4.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/5.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/1.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/2.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.profile_portion}>
+      <Image  style={styles.profile_pic} source={require('./Asset/4.jpg')} />
+  
+      <Text style={styles.name}>Konka Koheli</Text>
+      </TouchableOpacity>
+      </ScrollView>
+      </View>
+
+      </View>
       </View>
       <View style = {styles.footerSection}>
 
@@ -68,8 +124,9 @@ const styles = StyleSheet.create({
   },
   headerSection:{
     width:"100%",
-    height:150,
-    borderWidth:1,
+    height:120,
+    // borderWidth:1,
+    marginBottom:20,
     
   },
   footerSection:{},
@@ -82,7 +139,12 @@ const styles = StyleSheet.create({
     
     
   },
-  bottomHeader:{},
+  bottomHeader:{
+    width:"100%",
+    height:70,
+    flexDirection:'row',
+
+  },
   topHeaderleft:{
     width:"50%",
     height:50,
@@ -125,6 +187,54 @@ logo_downSend:{
 },
 iconstyle:{
   
+},
+profile_pic:{
+  width:45,
+  height:45,
+  borderRadius:50,
+  marginLeft:4,
+},
+story_section:{
+  width:"80%",
+  // borderWidth:1,
+  height:65,
+  flexDirection:"row",
+
+},
+profile_pic_section:{
+  width:"20%",
+  height:65,
+  paddingLeft:10,
+  // borderWidth:1,  
+  justifyContent:'center',
+
+
+},
+plus_view:{
+  width:15,
+  height:15,
+  borderRadius:10,
+ 
+  alignItems:'center',
+  backgroundColor:'#019EA8',
+  marginTop:-10,
+  marginLeft:30,
+},
+plus:{
+  marginTop:-2,
+  color:"#fff",
+  fontWeight:'bold',
+  //  justifyContent:'center',
+  // alignContent:"center",
+
+},
+name:{
+  color:'#fff',
+  fontSize:11,
+},
+profile_portion:{
+  width:80,
+
 }
 });
 
