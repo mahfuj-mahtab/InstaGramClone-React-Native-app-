@@ -2,7 +2,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faMugSaucer,faAngleDown, faHeart,faPaperPlane} from '@fortawesome/free-solid-svg-icons/'
+import { faMugSaucer,faAngleDown, faHeart,faPaperPlane, faHouse, faMagnifyingGlass, faPlus, faVideo} from '@fortawesome/free-solid-svg-icons/'
 
 import {
   SafeAreaView,
@@ -108,12 +108,35 @@ function App(): JSX.Element {
       </View>
       <View style ={styles.mainBody} >
       <ScrollView >
-
-
+        
       </ScrollView>
       </View>
       <View style = {styles.footerSection}>
-      <FontAwesomeIcon size={18}  icon={faHeart} />
+        <TouchableOpacity style={styles.footericonbox}>        
+          <View >
+        <FontAwesomeIcon style={styles.footericon} size={25}  icon={faHouse} />
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footericonbox}>        
+          <View >
+          <FontAwesomeIcon style={styles.footericon} size={25} icon={faMagnifyingGlass} />
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footericonbox}>        
+          <View style={styles.borderbox}>
+          <FontAwesomeIcon style={styles.footericon} size={20} icon={faPlus} />
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footericonbox}>        
+          <View >
+          <FontAwesomeIcon style={styles.footericon} size={25} icon={faVideo}/>
+        </View>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.footericonbox}>        
+          <View >
+          <Image  style={styles.profile_pic_in_footer} source={require('./Asset/2.jpg')} />
+        </View>
+        </TouchableOpacity>
       </View>
     </View>
    </SafeAreaView>
@@ -137,10 +160,11 @@ const styles = StyleSheet.create({
   },
   footerSection:{
     width:"100%",
-    height:100,
-    borderWidth:1,
-    borderColor:"#fff",
+    height:"7%",
+    // borderWidth:1,
+    // borderColor:"#fff",
     // marginTop:"139%",
+    flexDirection:'row',
   },
   topHeader:{
     flex:1,
@@ -251,10 +275,34 @@ profile_portion:{
 mainBody:{
   width:"100%",
   backgroundColor:"#fff",
-  height:570,
-  borderWidth:1,
+  height:"75.5%",
+  // borderWidth:1,
   borderColor:"#537637",
   // flex:1, 
+},
+footericonbox:{
+  width:"20%",
+  height:"100%",
+  // borderWidth:1,
+  justifyContent:'center',
+  alignContent:'center',
+  alignItems:'center',
+},
+footericon:{
+  width:20,
+  color:'#fff'
+},
+borderbox:{
+  width:22,
+  height:22,
+  borderWidth:2,
+  borderColor:"#fff",
+  borderRadius:5,
+},
+profile_pic_in_footer:{
+  width:35,
+  height:35,
+  borderRadius:50,
 }
 });
 
