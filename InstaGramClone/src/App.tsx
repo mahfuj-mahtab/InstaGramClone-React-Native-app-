@@ -2,7 +2,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faMugSaucer,faAngleDown, faHeart,faPaperPlane, faHouse, faMagnifyingGlass, faPlus, faVideo} from '@fortawesome/free-solid-svg-icons/'
+import { faMugSaucer,faAngleDown, faHeart,faPaperPlane, faHouse, faMagnifyingGlass, faPlus, faVideo, faEllipsisVertical, faMessage, faPlane, faSave} from '@fortawesome/free-solid-svg-icons/'
 
 import {
   SafeAreaView,
@@ -13,7 +13,8 @@ import {
   useColorScheme,
   View,
   TouchableOpacity,
-  Image
+  Image,
+  Touchable
 } from 'react-native';
 
 import {
@@ -108,7 +109,39 @@ function App(): JSX.Element {
       </View>
       <View style ={styles.mainBody} >
       <ScrollView >
-        
+        <View style={styles.post}>
+            <View style={styles.topPost}>
+              <TouchableOpacity>
+                <Image  style={styles.profile_pic_in_post} source={require('./Asset/4.jpg')} />
+                </TouchableOpacity>
+                <Text style={styles.nameInPost}>Konka Koheli</Text>
+                <TouchableOpacity>
+                <FontAwesomeIcon style={styles.postIcon} size={25} icon={faEllipsisVertical} />
+                </TouchableOpacity>
+             
+            </View>
+            <View style={styles.middlePost}>
+            <Image  style={styles.postImage} source={require('./Asset/2.jpg')} />
+            </View>
+            <View style={styles.bottomPost}>
+              <View style={styles.leftBottomPost}>
+              <TouchableOpacity>
+                <FontAwesomeIcon style={styles.postIconInBottom} size={22} icon={faHeart} />
+                </TouchableOpacity>
+              <TouchableOpacity>
+                <FontAwesomeIcon style={styles.postIconInBottom} size={22} icon={faMessage} />
+                </TouchableOpacity>
+              <TouchableOpacity>
+                <FontAwesomeIcon style={styles.postIconInBottom} size={22} icon={faPaperPlane} />
+                </TouchableOpacity>
+              </View>
+              <View style={styles.rightBottomPost}>
+              <TouchableOpacity>
+                <FontAwesomeIcon style={styles.postIconInBottom} size={22} icon={faSave} />
+                </TouchableOpacity>
+              </View>
+            </View>
+        </View>
       </ScrollView>
       </View>
       <View style = {styles.footerSection}>
@@ -274,7 +307,7 @@ profile_portion:{
 },
 mainBody:{
   width:"100%",
-  backgroundColor:"#fff",
+  backgroundColor:"#0D0D0D",
   height:"75.5%",
   // borderWidth:1,
   borderColor:"#537637",
@@ -303,7 +336,80 @@ profile_pic_in_footer:{
   width:35,
   height:35,
   borderRadius:50,
-}
+},
+post:{
+  width:"100%",
+  height:500,
+  // borderWidth:1,
+  borderTopWidth:2,
+  borderColor:'#fff',
+  flexDirection:'column',
+},
+topPost :{
+  width:"100%",
+  height:60,
+  // borderWidth:1,
+  borderColor:'#fff',
+  flexDirection:'row',
+  alignItems:'center',
+  // alignContent:'center',
+
+},
+middlePost :{
+  width:"98%",
+  height:300,
+  // borderWidth:1,
+  borderColor:'#346366',
+  flexDirection:'row',
+
+},
+postImage:{
+  width:"100%",
+  height:300,
+},
+
+bottomPost :{
+  paddingTop:20,
+  width:"100%",
+  height:140,
+  borderWidth:1,
+  borderColor:'#fff',
+  flexDirection:'row',
+
+},
+profile_pic_in_post:{
+  width: 45,
+  height:45,
+  borderRadius:50,
+  marginLeft:10,
+  // alignItems:'flex-start',
+},
+nameInPost:{
+  textAlign:'left',
+  fontWeight:'bold',
+  fontSize:17,
+  lineHeight:45,
+  width:"75%",
+  height:45,
+  // borderWidth:1,
+  marginLeft:10,
+  color:'#fff',
+},
+postIcon:{
+  color:'#fff',
+},
+postIconInBottom:{
+  color:'#fff',
+  marginRight:10,
+},
+leftBottomPost:{
+  width:"90%",
+  flexDirection:'row',
+  paddingLeft:10,
+},
+rightBottomPost:{
+  width:"10%",
+},
 });
 
 export default App;
